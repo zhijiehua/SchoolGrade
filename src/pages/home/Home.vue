@@ -10,7 +10,7 @@
       <ul>
         <li class="form-n">
           用户名：
-          <input type="text" v-model="username" size="15" maxlength="10">
+          <input type="text" v-model="this.$store.state.username" size="15" maxlength="10">
         </li>
         <li class="form-n">
           密&nbsp;&nbsp; 码：
@@ -22,8 +22,11 @@
           <span class="yzm">111111</span>
         </li>
       </ul>
-      <button class="from-n">登陆</button>
+      <router-link to="/firstpages">
+        <div class="button">登陆</div>
+      </router-link>
     </form>
+
   </div>
 </template>
 
@@ -32,7 +35,6 @@ export default {
   name: 'Home',
   data () {
     return {
-      username: '',
       password: '',
       yzm: ''
     }
@@ -65,7 +67,7 @@ export default {
     height: .2rem;
     background: #000000;
   }
-  button{
-    margin-left: .5rem;
+  .button{
+    margin-left: 3rem;
   }
 </style>

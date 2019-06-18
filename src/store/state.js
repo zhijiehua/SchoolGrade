@@ -1,3 +1,4 @@
 export default{
-  username: ''
+  username: '王gaygay',
+  tors: 'teacher'
 }
