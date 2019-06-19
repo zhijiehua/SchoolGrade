@@ -58,7 +58,6 @@ export default {
       // flag = 2; 用户不存在
       let flag = 2
       let List = this.shengfen === 'student' ? this.studentList : this.teacherList
-      alert(List)
       for (var i = 0; i < List.length; i++) {
         if (this.username === List[i]['username']) {
           if (this.password === List[i]['password']) {
