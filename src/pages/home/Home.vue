@@ -1,73 +1,48 @@
 <template>
   <div class="home">
-    <h1 class="title">教务信息管理系统</h1>
-    <form action="" method="post" class="theform">
-      <div class="form-kind">
-        登陆分类：
-        <input  type="radio" value="student" name="all" checked="checked">学生
-        <input  type="radio" value="teacher" name="all">老师
-      </div>
-      <ul>
-        <li class="form-n">
-          用户名：
-          <input type="text" v-model="this.$store.state.username" size="15" maxlength="10">
-        </li>
-        <li class="form-n">
-          密&nbsp;&nbsp; 码：
-          <input type="password" size="15" maxlength="10" v-model="password">
-        </li>
-        <li class="form-n">
-          验证码：
-          <input type="text" size="10" maxlength="4" v-model="yzm">
-          <span class="yzm">111111</span>
-        </li>
-      </ul>
-      <router-link to="/firstpages">
-        <div class="button">登陆</div>
-      </router-link>
-    </form>
-
+    <home-content
+      :teacherList="teacherList"
+      :studentList="studentList"
+    >
+    </home-content>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+import HomeContent from './components/Content'
 export default {
   name: 'Home',
+  components: {
+    HomeContent
+  },
   data () {
     return {
       password: '',
-      yzm: ''
+      yzm: '',
+      teacherList: [],
+      studentList: []
     }
+  },
+  methods: {
+    getMemberList () {
+      axios.get('/api/memberList.json')
+        .then(this.getMemberListSucc)
+    },
+    getMemberListSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.teacherList = data.teacherList
+        this.studentList = data.studentList
+      }
+    }
+  },
+  mounted () {
+    this.getMemberList()
   }
 }
 </script>
 
 <style scoped>
-  .title{
-    font-size: 1rem;
-    color: #6788f6;
-    margin-left: 7rem;
-    margin-top: 4rem;
-  }
-  .theform{
-    border: .2rem red solid;
-    width: 15rem;
-    margin-left: 7rem;
-    margin-top: .1rem;
-    background: #999999;
-  }
-  .form-kind{
-    margin: .2rem .5rem;
-  }
-  .form-n{
-    margin: .2rem .2rem;
-  }
-  .yzm{
-    width: .5rem;
-    height: .2rem;
-    background: #000000;
-  }
-  .button{
-    margin-left: 3rem;
-  }
 </style>
