@@ -1,0 +1,55 @@
+{
+	"ret": true,
+	"data":{
+		"studentList": [{
+			"username": "0000000001",
+			"password": "0000000001"
+		},{
+			"username": "0000000002",
+			"password": "0000000002"
+		},{
+			"username": "0000000003",
+			"password": "0000000003"
+		},{
+			"username": "0000000004",
+			"password": "0000000004"
+		},{
+			"username": "0000000005",
+			"password": "0000000005"
+		},{
+			"username": "0000000006",
+			"password": "0000000006"
+		},{
+			"username": "0000000007",
+			"password": "0000000007"
+		},{
+			"username": "0000000008",
+			"password": "0000000008"
+		}],
+		"teacherList": [{
+			"username": "0000000001",
+			"password": "0000000001"
+		},{
+			"username": "0000000002",
+			"password": "0000000002"
+		},{
+			"username": "0000000003",
+			"password": "0000000003"
+		},{
+			"username": "0000000004",
+			"password": "0000000004"
+		},{
+			"username": "0000000005",
+			"password": "0000000005"
+		},{
+			"username": "0000000006",
+			"password": "0000000006"
+		},{
+			"username": "0000000007",
+			"password": "0000000007"
+		},{
+			"username": "0000000008",
+			"password": "0000000008"
+		}]
+	}
+}
