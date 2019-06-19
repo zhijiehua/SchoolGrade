@@ -4,17 +4,19 @@
     <form action="" method="post" class="theform">
       <div class="form-kind">
         登陆分类：
-        <input  type="radio" value="student" name="all" checked="checked">学生
-        <input  type="radio" value="teacher" name="all">老师
+        <input @click="handlestudent"  type="radio" value="student" name="all" checked="checked" ref="student">学生
+        <input @click="handleteacher"  type="radio" value="teacher" name="all" ref="teacher">老师
       </div>
       <ul>
         <li class="form-n">
           用户名：
           <input type="text" v-model="username" size="15" maxlength="10">
+          <span class="info" v-if="flag === 2">用户不存在</span>
         </li>
         <li class="form-n">
           密&nbsp;&nbsp; 码：
           <input type="password" size="15" maxlength="10" v-model="password">
+          <span class="info" v-if="flag === 1">密码错误</span>
         </li>
         <li class="form-n">
           验证码：
@@ -35,7 +37,8 @@ export default {
       username: '',
       password: '',
       yzm: '',
-      ErrorPassword: true
+      flag: '',
+      shengfen: 'student'
     }
   },
   props: {
@@ -43,21 +46,45 @@ export default {
     studentList: Array
   },
   methods: {
+    handleteacher () {
+      this.shengfen = 'teacher'
+    },
+    handlestudent () {
+      this.shengfen = 'student'
+    },
     handleClickButton () {
-      const flag = {
-        'username': this.username,
-        'password': this.password
+      // flag = 0；登陆成功
+      // flag = 1; 密码不存在
+      // flag = 2; 用户不存在
+      let flag = 2
+      let List = this.shengfen === 'student' ? this.studentList : this.teacherList
+      alert(List)
+      for (var i = 0; i < List.length; i++) {
+        if (this.username === List[i]['username']) {
+          if (this.password === List[i]['password']) {
+            flag = 0
+          } else {
+            flag = 1
+          }
+          break
+        }
       }
-      console.log(flag)
-      console.log(this.studentList[0])
-      alert(this.studentList.indexOf(flag))
-      if (this.studentList.indexOf(flag) === -1) {
-        this.ErrorPassword = true
-      } else {
+
+      this.flag = flag
+
+      if (flag === 0) {
         this.$router.push({
           path: '/firstpages',
           name: 'Firstpages'
         })
+        this.$store.state.username = this.username
+      }
+      if (flag === 1) {
+        this.password = ''
+      }
+      if (flag === 2) {
+        this.password = ''
+        this.username = ''
       }
     }
   }
@@ -91,5 +118,8 @@ export default {
   }
   .button{
     margin-left: 3rem;
+  }
+  .info{
+    color: red
   }
 </style>
