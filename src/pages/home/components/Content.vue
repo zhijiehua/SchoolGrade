@@ -62,6 +62,7 @@ export default {
         if (this.username === List[i]['username']) {
           if (this.password === List[i]['password']) {
             flag = 0
+            this.$store.state.username = this.username
           } else {
             flag = 1
           }
