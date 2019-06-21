@@ -3,56 +3,137 @@
 	"data":{
 		"studentList": [{
 			"username": "0000000001",
-			"password": "0000000001"
+			"password": "0000000001",
+			"class": "one"
 		},{
 			"username": "0000000002",
-			"password": "0000000002"
+			"password": "0000000002",
+			"class": "one"
 		},{
 			"username": "0000000003",
-			"password": "0000000003"
+			"password": "0000000003",
+			"class": "one"
 		},{
 			"username": "0000000004",
-			"password": "0000000004"
+			"password": "0000000004",
+			"class": "one"
 		},{
 			"username": "0000000005",
-			"password": "0000000005"
+			"password": "0000000005",
+			"class": "one"
 		},{
 			"username": "0000000006",
-			"password": "0000000006"
+			"password": "0000000006",
+			"class": "one"
 		},{
 			"username": "0000000007",
-			"password": "0000000007"
+			"password": "0000000007",
+			"class": "one"
 		},{
 			"username": "0000000008",
-			"password": "0000000008"
+			"password": "0000000008",
+			"class": "one"
 		},{
 			"username": "0000000009",
-			"password": "0000000009"
+			"password": "0000000009",
+			"class": "one"
+		},{
+			"username": "0000000010",
+			"password": "0000000010",
+			"class": "one"
+		},{
+			"username": "0000000011",
+			"password": "0000000011",
+			"class": "two"
+		},{
+			"username": "0000000012",
+			"password": "0000000012",
+			"class": "two"
+		},{
+			"username": "0000000013",
+			"password": "0000000013",
+			"class": "two"
+		},{
+			"username": "0000000014",
+			"password": "0000000014",
+			"class": "two"
+		},{
+			"username": "0000000015",
+			"password": "0000000015",
+			"class": "two"
+		},{
+			"username": "0000000016",
+			"password": "0000000016",
+			"class": "two"
+		},{
+			"username": "0000000017",
+			"password": "0000000017",
+			"class": "two"
+		},{
+			"username": "0000000018",
+			"password": "0000000018",
+			"class": "two"
+		},{
+			"username": "0000000019",
+			"password": "0000000019",
+			"class": "two"
+		},{
+			"username": "0000000020",
+			"password": "0000000020",
+			"class": "two"
+		},{
+			"username": "0000000021",
+			"password": "0000000021",
+			"class": "three"
+		},{
+			"username": "0000000022",
+			"password": "0000000022",
+			"class": "three"
+		},{
+			"username": "0000000023",
+			"password": "0000000023",
+			"class": "three"
+		},{
+			"username": "0000000024",
+			"password": "0000000024",
+			"class": "three"
+		},{
+			"username": "0000000025",
+			"password": "0000000025",
+			"class": "three"
+		},{
+			"username": "0000000026",
+			"password": "0000000026",
+			"class": "three"
+		},{
+			"username": "0000000027",
+			"password": "0000000027",
+			"class": "three"
+		},{
+			"username": "0000000028",
+			"password": "0000000028",
+			"class": "three"
+		},{
+			"username": "0000000029",
+			"password": "0000000029",
+			"class": "three"
+		},{
+			"username": "0000000030",
+			"password": "0000000030",
+			"class": "three"
 		}],
 		"teacherList": [{
 			"username": "0000000001",
-			"password": "0000000001"
+			"password": "0000000001",
+			"class": "one"
 		},{
 			"username": "0000000002",
-			"password": "0000000002"
+			"password": "0000000002",
+			"class": "two"
 		},{
 			"username": "0000000003",
-			"password": "0000000003"
-		},{
-			"username": "0000000004",
-			"password": "0000000004"
-		},{
-			"username": "0000000005",
-			"password": "0000000005"
-		},{
-			"username": "0000000006",
-			"password": "0000000006"
-		},{
-			"username": "0000000007",
-			"password": "0000000007"
-		},{
-			"username": "0000000008",
-			"password": "0000000008"
+			"password": "0000000003",
+			"class": "three"
 		}]
 	}
 }

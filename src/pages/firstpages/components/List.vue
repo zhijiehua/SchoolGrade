@@ -1,8 +1,8 @@
 <template>
   <div class="firstpages">
-    <div class="hello"><span>{{this.$store.state.username}}</span>您好!</div>
+    <div class="hello"><span>{{this.$store.state.mesg.username}}</span>您好!</div>
     <ul>
-      <li class="list" v-if="this.tors" @click="selfGrade">查询自己成绩</li>
+      <li class="list" v-if="!this.tors" @click="selfGrade">查询自己成绩</li>
       <li class="list" v-if="this.tors" @click="classGrade">查询本班成绩</li>
       <li class="list" v-if="this.tors" @click="addMesg">添加学生学籍信息</li>
       <li class="list" v-if="this.tors" @click="deleteMesg">删除学生学籍信息</li>
@@ -35,7 +35,7 @@ export default {
   methods: {
     selfGrade () {
       for (var i = 0; i < this.gradeList.length; i++) {
-        if (this.gradeList[i].username === this.$store.state.username) {
+        if (this.gradeList[i].username === this.$store.state.mesg.username) {
           this.theGrade.name = this.gradeList[i].name
           this.theGrade.chinese = this.gradeList[i].chinese
           this.theGrade.math = this.gradeList[i].math
@@ -44,7 +44,6 @@ export default {
           break
         }
       }
-      console.log(this.theGrade)
     },
     classGrade () {
       console.log('2')
@@ -66,7 +65,7 @@ export default {
     }
   },
   mounted () {
-    if (this.$store.state.tors === 'teacher') {
+    if (this.$store.state.mesg.shengfen === 'teacher') {
       this.tors = true
     } else {
       this.tors = false

@@ -1,5 +1,12 @@
+let defaultMesg = ''
+
+try {
+  if (localStorage.mesg) {
+    defaultMesg = localStorage.mesg
+  }
+} catch (e) {}
+
 export default{
-  username: '0000000001',
-  name: '一一',
-  tors: 'teacher'
+  mesg: defaultMesg,
+  name: '一一'
 }

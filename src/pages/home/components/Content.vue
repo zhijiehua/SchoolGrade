@@ -62,7 +62,11 @@ export default {
         if (this.username === List[i]['username']) {
           if (this.password === List[i]['password']) {
             flag = 0
-            this.$store.state.username = this.username
+            let mesg = {
+              username: this.username,
+              shengfen: this.shengfen
+            }
+            this.$store.dispatch('peopleIn', mesg)
           } else {
             flag = 1
           }
@@ -77,7 +81,6 @@ export default {
           path: '/firstpages',
           name: 'Firstpages'
         })
-        this.$store.state.username = this.username
       }
       if (flag === 1) {
         this.password = ''
