@@ -9,7 +9,6 @@ export default new vuex.Store({
   actions: {
     peopleIn (ctx, mesg) {
       ctx.commit('peopleIn', mesg)
-      console.log(mesg)
     }
   },
   mutations: {

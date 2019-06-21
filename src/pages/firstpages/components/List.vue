@@ -1,19 +1,21 @@
 <template>
   <div class="firstpages">
-    <div class="hello"><span>{{this.$store.state.mesg.username}}</span>您好!</div>
+    <div class="hello"><span>{{this.$store.state.mesg.split("|")[0]}}</span>您好!</div>
     <ul>
       <li class="list" v-if="!this.tors" @click="selfGrade">查询自己成绩</li>
-      <li class="list" v-if="this.tors" @click="classGrade">查询本班成绩</li>
-      <li class="list" v-if="this.tors" @click="addMesg">添加学生学籍信息</li>
-      <li class="list" v-if="this.tors" @click="deleteMesg">删除学生学籍信息</li>
-      <li class="list" v-if="this.tors" @click="addAllGrade">录入成绩</li>
-      <li class="list" v-if="this.tors" @click="changeGrade">修改成绩</li>
-      <li class="list" v-if="this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
+      <li class="list" v-if="!this.tors" @click="classGrade">查询本班成绩</li>
+      <li class="list" v-if="!this.tors" @click="addMesg">添加学生学籍信息</li>
+      <li class="list" v-if="!this.tors" @click="deleteMesg">删除学生学籍信息</li>
+      <li class="list" v-if="!this.tors" @click="addAllGrade">录入成绩</li>
+      <li class="list" v-if="!this.tors" @click="changeGrade">修改成绩</li>
+      <li class="list" v-if="!this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
     </ul>
+    <user-grade :theGrade="this.theGrade"></user-grade>
   </div>
 </template>
 
 <script>
+import UserGrade from './grade/usergrade'
 export default {
   name: 'FirstpagesList',
   data () {
@@ -29,13 +31,16 @@ export default {
       }
     }
   },
+  components: {
+    UserGrade
+  },
   props: {
     gradeList: Array
   },
   methods: {
     selfGrade () {
       for (var i = 0; i < this.gradeList.length; i++) {
-        if (this.gradeList[i].username === this.$store.state.mesg.username) {
+        if (this.gradeList[i].username === this.$store.state.mesg.split('|')[0]) {
           this.theGrade.name = this.gradeList[i].name
           this.theGrade.chinese = this.gradeList[i].chinese
           this.theGrade.math = this.gradeList[i].math

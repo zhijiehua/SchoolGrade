@@ -62,10 +62,7 @@ export default {
         if (this.username === List[i]['username']) {
           if (this.password === List[i]['password']) {
             flag = 0
-            let mesg = {
-              username: this.username,
-              shengfen: this.shengfen
-            }
+            let mesg = this.username + '|' + this.shengfen
             this.$store.dispatch('peopleIn', mesg)
           } else {
             flag = 1
