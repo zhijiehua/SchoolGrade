@@ -11,7 +11,7 @@
       <li class="list" v-if="!this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
     </ul>
     <user-grade :theGrade="this.theGrade" :actionName="this.actionName"></user-grade>
-    <class-grade></class-grade>
+    <class-grade :gradeList="this.gradeList" :actionName="this.actionName"></class-grade>
   </div>
 </template>
 
@@ -54,10 +54,10 @@ export default {
         }
       }
       this.actionName = '1'
-      console.log(this.theGrade)
     },
     classGrade () {
-      console.log('2')
+      this.actionName = '2'
+      console.log(this.gradeList)
     },
     addMesg () {
       console.log('3')

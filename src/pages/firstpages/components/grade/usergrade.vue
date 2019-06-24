@@ -33,7 +33,7 @@ export default {
   .table{
     position: absolute;
     right: 15rem;
-    top: 5rem;
+    top: 1rem;
     background: red;
     border: .1rem #000000 solid;
   }

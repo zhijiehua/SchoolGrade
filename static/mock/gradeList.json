@@ -7,63 +7,72 @@
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "one"
 		},{
 			"username": "0000000002",
             "name": "二二",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "one"
 		},{
 			"username": "0000000003",
             "name": "三三",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "one"
 		},{
 			"username": "0000000004",
             "name": "四四",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "two"
 		},{
 			"username": "0000000005",
             "name": "五五",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "two"
 		},{
 			"username": "0000000006",
             "name": "六六",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "two"
 		},{
 			"username": "0000000007",
             "name": "七七",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "three"
 		},{
 			"username": "0000000008",
             "name": "八八",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "three"
 		},{
 			"username": "0000000009",
             "name": "九九",
             "chinese": 100,
             "math": 100,
             "English": 100,
-            "te": 100
+            "te": 100,
+            "class": "three"
 		}]
 	}
 }
