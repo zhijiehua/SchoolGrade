@@ -11,11 +11,13 @@
       <li class="list" v-if="!this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
     </ul>
     <user-grade :theGrade="this.theGrade" :actionName="this.actionName"></user-grade>
+    <class-grade></class-grade>
   </div>
 </template>
 
 <script>
 import UserGrade from './grade/usergrade'
+import classGrade from './grade/classgrade'
 export default {
   name: 'FirstpagesList',
   data () {
@@ -33,7 +35,8 @@ export default {
     }
   },
   components: {
-    UserGrade
+    UserGrade,
+    classGrade
   },
   props: {
     gradeList: Array
