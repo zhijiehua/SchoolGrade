@@ -10,7 +10,7 @@
       <li class="list" v-if="!this.tors" @click="changeGrade">修改成绩</li>
       <li class="list" v-if="!this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
     </ul>
-    <user-grade :theGrade="this.theGrade"></user-grade>
+    <user-grade :theGrade="this.theGrade" :actionName="this.actionName"></user-grade>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
         'math': '',
         'English': '',
         'te': ''
-      }
+      },
+      actionName: ''
     }
   },
   components: {
@@ -49,6 +50,8 @@ export default {
           break
         }
       }
+      this.actionName = '1'
+      console.log(this.theGrade)
     },
     classGrade () {
       console.log('2')
