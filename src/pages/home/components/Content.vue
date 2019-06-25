@@ -1,31 +1,26 @@
 <template>
   <div class="home">
     <h1 class="title">教务信息管理系统</h1>
-    <form action="" method="post" class="theform">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561391667286&di=2cfc2665f50186ec43d1a515e2feb1bd&imgtype=0&src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fuserup%2F0%2F1413012235-43G.png" alt="">
+    <div class="theform">
       <div class="form-kind">
-        登陆分类：
-        <input @click="handlestudent"  type="radio" value="student" name="all" checked="checked" ref="student">学生
-        <input @click="handleteacher"  type="radio" value="teacher" name="all" ref="teacher">老师
+        <div @click="handlestudent"  type="radio" value="student" name="all" checked="checked" ref="student" class="shengfen stu">学生</div>
+        <div @click="handleteacher"  type="radio" value="teacher" name="all" ref="teacher" class="shengfen teac">老师</div>
       </div>
       <ul>
         <li class="form-n">
-          用户名：
+          <div class="pic"><span class="iconfont">&#xe801;</span></div>
           <input type="text" v-model="username" size="15" maxlength="10">
           <span class="info" v-if="flag === 2">用户不存在</span>
         </li>
-        <li class="form-n">
-          密&nbsp;&nbsp; 码：
+        <li class="form-n password">
+          <div class="pic"><span class="iconfont">&#xe63a;</span></div>
           <input type="password" size="15" maxlength="10" v-model="password">
           <span class="info" v-if="flag === 1">密码错误</span>
         </li>
-        <li class="form-n">
-          验证码：
-          <input type="text" size="10" maxlength="4" v-model="yzm">
-          <span class="yzm">111111</span>
-        </li>
       </ul>
       <div class="button" @click="handleClickButton">登陆</div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -92,34 +87,67 @@ export default {
 </script>
 
 <style scoped>
+  .home{
+    height: 10rem;
+    width: 15rem;
+    margin-top: 1rem;
+    margin-left: 23%;
+  }
   .title{
-    font-size: 1rem;
+    font-size: .5rem;
     color: #6788f6;
-    margin-left: 7rem;
-    margin-top: 4rem;
+    margin-left: 5rem;
+  }
+  .shengfen{
+    position: absolute;
+    top: .2rem;
+    width: 1rem;
+    text-align: center;
+    line-height: .5rem;
+  }
+  .stu{
+    left: 1.5rem;
+    background: #666666;
+  }
+  .teac{
+    right: 1.5rem;
+    background: #6788f6;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
   .theform{
-    border: .2rem red solid;
-    width: 15rem;
-    margin-left: 7rem;
-    margin-top: .1rem;
-    background: #999999;
+    position: absolute;
+    border: .02rem #666666 solid;
+    width: 5rem;
+    left: 12rem;
+    top: 5rem;
   }
   .form-kind{
     margin: .2rem .5rem;
   }
   .form-n{
-    margin: .2rem .2rem;
+    margin-top: .8rem;
+    margin-left: .7rem;
   }
-  .yzm{
-    width: .5rem;
-    height: .2rem;
-    background: #000000;
+  .password{
+    margin-top: .2rem;
   }
   .button{
     margin-left: 3rem;
   }
+  .pic{
+    float: left;
+    width: .7rem;
+    height: .47rem;
+    line-height: .47rem;
+    background: #666006;
+    text-align: center;
+  }
   .info{
-    color: red
+    color: red;
+    font-size: .01rem;
   }
 </style>
