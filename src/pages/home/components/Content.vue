@@ -43,9 +43,13 @@ export default {
   methods: {
     handleteacher () {
       this.shengfen = 'teacher'
+      this.$refs.student.style.background = '#cccccc'
+      this.$refs.teacher.style.background = '#666666'
     },
     handlestudent () {
       this.shengfen = 'student'
+      this.$refs.student.style.background = '#666666'
+      this.$refs.teacher.style.background = '#cccccc'
     },
     handleClickButton () {
       // flag = 0；登陆成功
@@ -101,17 +105,17 @@ export default {
   .shengfen{
     position: absolute;
     top: .2rem;
-    width: 1rem;
+    width: 1.8rem;
     text-align: center;
     line-height: .5rem;
   }
   .stu{
-    left: 1.5rem;
+    left: .7rem;
     background: #666666;
   }
   .teac{
-    right: 1.5rem;
-    background: #6788f6;
+    right: .85rem;
+    background: #cccccc;
   }
   img{
     width: 100%;
@@ -136,7 +140,13 @@ export default {
     margin-top: .2rem;
   }
   .button{
-    margin-left: 3rem;
+    margin-left: .7rem;
+    line-height: .5rem;
+    width: 3.5rem;
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    text-align: center;
+    background: #009999;
   }
   .pic{
     float: left;
