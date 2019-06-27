@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getGradeList () {
-      axios.get('/api/gradeList.json')
+      axios.get('/api/getAllGrade')
         .then(this.getGradeListSucc)
     },
     getGradeListSucc (res) {

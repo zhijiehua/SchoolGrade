@@ -26,10 +26,11 @@ export default {
   },
   methods: {
     getMemberList () {
-      axios.get('/api/memberList.json')
+      axios.get('/api/getAllGrade')
         .then(this.getMemberListSucc)
     },
     getMemberListSucc (res) {
+      console.log(res)
       res = res.data
       if (res.ret && res.data) {
         const data = res.data
