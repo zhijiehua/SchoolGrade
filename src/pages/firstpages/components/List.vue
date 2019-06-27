@@ -12,12 +12,14 @@
     </ul>
     <user-grade :theGrade="this.theGrade" :actionName="this.actionName"></user-grade>
     <class-grade :gradeList="this.gradeList" :actionName="this.actionName"></class-grade>
+    <add-grade :actionName='this.actionName'></add-grade>
   </div>
 </template>
 
 <script>
 import UserGrade from './grade/usergrade'
-import classGrade from './grade/classgrade'
+import ClassGrade from './grade/classgrade'
+import AddGrade from './grade/addgrade'
 export default {
   name: 'FirstpagesList',
   data () {
@@ -36,7 +38,8 @@ export default {
   },
   components: {
     UserGrade,
-    classGrade
+    ClassGrade,
+    AddGrade
   },
   props: {
     gradeList: Array
@@ -57,10 +60,9 @@ export default {
     },
     classGrade () {
       this.actionName = '2'
-      console.log(this.gradeList)
     },
     addMesg () {
-      console.log('3')
+      this.actionName = '3'
     },
     deleteMesg () {
       console.log('4')
