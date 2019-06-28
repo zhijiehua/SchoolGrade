@@ -26,16 +26,21 @@ export default {
   },
   methods: {
     getMemberList () {
-      axios.get('/api/getAllGrade')
-        .then(this.getMemberListSucc)
+      axios.get('/api/getStuPass')
+        .then(this.getStuListSucc)
+      axios.get('./api/getTeacPass')
+        .then(this.getTeacListSucc)
     },
-    getMemberListSucc (res) {
-      console.log(res)
+    getStuListSucc (res) {
       res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        this.teacherList = data.teacherList
-        this.studentList = data.studentList
+      if (res.message) {
+        this.studentList = res.message
+      }
+    },
+    getTeacListSucc (res) {
+      res = res.data
+      if (res.message) {
+        this.teacherList = res.message
       }
     }
   },

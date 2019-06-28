@@ -114,7 +114,7 @@ export default {
     background: #666666;
   }
   .teac{
-    right: .85rem;
+    right: 1.35rem;
     background: #cccccc;
   }
   img{
@@ -125,7 +125,7 @@ export default {
   .theform{
     position: absolute;
     border: .02rem #666666 solid;
-    width: 5rem;
+    width: 5.5rem;
     left: 12rem;
     top: 5rem;
   }
