@@ -24,9 +24,9 @@ export default {
     },
     getGradeListSucc (res) {
       res = res.data
-      if (res.ret && res.data) {
-        const data = res.data
-        this.gradeList = data.gradeList
+      console.log(res)
+      if (res.message) {
+        this.gradeList = res.message
       }
     }
   },
