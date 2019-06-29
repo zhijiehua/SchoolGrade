@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'AddGrade',
   props: {
@@ -44,6 +45,23 @@ export default {
       if (this.gradeList.math === '') this.showList.math = '1'
       if (this.gradeList.English === '') this.showList.English = '1'
       if (this.gradeList.te === '') this.showList.te = '1'
+      const x = this.showList
+      if (x.class !== '1' && x.name !== '1' && x.chinese !== '1' && x.math !== '1' && x.English !== '1' && x.te !== '1') {
+        this.presentation()
+      }
+    },
+    presentation () {
+      let Add = confirm('确定要添加吗?')
+      if (Add === true) {
+        this.transmit()
+      }
+    },
+    transmit () {
+      axios.post('/addGrade', this.gradeList).then(function (response) {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error)
+      })
     }
   }
 }

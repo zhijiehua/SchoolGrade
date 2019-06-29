@@ -3,12 +3,12 @@
     <div class="hello"><span>{{this.$store.state.mesg.split("|")[0]}}</span>您好!</div>
     <ul>
       <li class="list" v-if="!this.tors" @click="selfGrade">查询自己成绩</li>
-      <li class="list" v-if="!this.tors" @click="classGrade">查询本班成绩</li>
-      <li class="list" v-if="!this.tors" @click="addMesg">添加学生学籍信息</li>
-      <li class="list" v-if="!this.tors" @click="deleteMesg">删除学生学籍信息</li>
-      <li class="list" v-if="!this.tors" @click="addAllGrade">录入成绩</li>
-      <li class="list" v-if="!this.tors" @click="changeGrade">修改成绩</li>
-      <li class="list" v-if="!this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
+      <li class="list" v-if="this.tors" @click="classGrade">查询本班成绩</li>
+      <li class="list" v-if="this.tors" @click="addMesg">添加学生学籍信息</li>
+      <li class="list" v-if="this.tors" @click="deleteMesg">删除学生学籍信息</li>
+      <li class="list" v-if="this.tors" @click="addAllGrade">录入成绩</li>
+      <li class="list" v-if="this.tors" @click="changeGrade">修改成绩</li>
+      <li class="list" v-if="this.tors" @click="findGradeAccdName">查找指定某人的成绩</li>
     </ul>
     <user-grade :theGrade="this.theGrade" :actionName="this.actionName"></user-grade>
     <class-grade :gradeList="this.gradeList" :actionName="this.actionName"></class-grade>
@@ -25,7 +25,7 @@ export default {
   data () {
     return {
       username: '',
-      tors: '',
+      tors: false,
       theGrade: {
         'name': '',
         'chinese': '',
@@ -78,7 +78,7 @@ export default {
     }
   },
   mounted () {
-    if (this.$store.state.mesg.shengfen === 'teacher') {
+    if (this.$store.state.mesg.split('|')[1] === 'teacher') {
       this.tors = true
     } else {
       this.tors = false
